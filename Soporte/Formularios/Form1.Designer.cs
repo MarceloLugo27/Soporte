@@ -45,6 +45,7 @@
             this.aulastoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirAulasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plazosDeTiempoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrativosgeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +97,8 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aulasPrivadasToolStripMenuItem1,
             this.aulasUsosMúltiplesToolStripMenuItem,
-            this.administrativosToolStripMenuItem1});
+            this.administrativosToolStripMenuItem1,
+            this.administrativosgeneralToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -104,21 +106,21 @@
             // aulasPrivadasToolStripMenuItem1
             // 
             this.aulasPrivadasToolStripMenuItem1.Name = "aulasPrivadasToolStripMenuItem1";
-            this.aulasPrivadasToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.aulasPrivadasToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.aulasPrivadasToolStripMenuItem1.Text = "Aulas privadas";
             this.aulasPrivadasToolStripMenuItem1.Click += new System.EventHandler(this.aulasPrivadasToolStripMenuItem1_Click);
             // 
             // aulasUsosMúltiplesToolStripMenuItem
             // 
             this.aulasUsosMúltiplesToolStripMenuItem.Name = "aulasUsosMúltiplesToolStripMenuItem";
-            this.aulasUsosMúltiplesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.aulasUsosMúltiplesToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.aulasUsosMúltiplesToolStripMenuItem.Text = "Aulas usos múltiples";
             this.aulasUsosMúltiplesToolStripMenuItem.Click += new System.EventHandler(this.aulasUsosMúltiplesToolStripMenuItem_Click);
             // 
             // administrativosToolStripMenuItem1
             // 
             this.administrativosToolStripMenuItem1.Name = "administrativosToolStripMenuItem1";
-            this.administrativosToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.administrativosToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.administrativosToolStripMenuItem1.Text = "Administrativos";
             this.administrativosToolStripMenuItem1.Click += new System.EventHandler(this.administrativosToolStripMenuItem1_Click);
             // 
@@ -176,7 +178,7 @@
             // añadirAulasToolStripMenuItem
             // 
             this.añadirAulasToolStripMenuItem.Name = "añadirAulasToolStripMenuItem";
-            this.añadirAulasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.añadirAulasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.añadirAulasToolStripMenuItem.Text = "Añadir aulas";
             this.añadirAulasToolStripMenuItem.Click += new System.EventHandler(this.añadirAulasToolStripMenuItem_Click);
             // 
@@ -186,6 +188,13 @@
             this.plazosDeTiempoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.plazosDeTiempoToolStripMenuItem.Text = "Plazos de tiempo";
             this.plazosDeTiempoToolStripMenuItem.Click += new System.EventHandler(this.plazosDeTiempoToolStripMenuItem_Click);
+            // 
+            // administrativosgeneralToolStripMenuItem
+            // 
+            this.administrativosgeneralToolStripMenuItem.Name = "administrativosgeneralToolStripMenuItem";
+            this.administrativosgeneralToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.administrativosgeneralToolStripMenuItem.Text = "Administrativos (general)";
+            this.administrativosgeneralToolStripMenuItem.Click += new System.EventHandler(this.administrativosgeneralToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -224,6 +233,7 @@
         private System.Windows.Forms.ToolStripMenuItem agregarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirAulasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem administrativosgeneralToolStripMenuItem;
     }
 }
 

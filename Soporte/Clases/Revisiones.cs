@@ -296,5 +296,23 @@ namespace Soporte.Clases
             }
             return ds;
         }
+
+        public static DataSet ReportesAulasAdminGeneral(DateTime FechaInicio, DateTime FechaFinal)
+        {
+            DataSet ds = new DataSet();
+            List<SqlParameter> listParameters = new List<SqlParameter>();
+            listParameters.Add(new SqlParameter { ParameterName = "@pDateFechaInicio", SqlDbType = SqlDbType.VarChar, Value = FechaInicio.ToString("yyyy-MM-dd") });
+            listParameters.Add(new SqlParameter { ParameterName = "@pDateFechaFinal", SqlDbType = SqlDbType.VarChar, Value = FechaFinal.ToString("yyyy-MM-dd") });
+
+            try
+            {
+                ds = Conexion.execute_sp("ReportesAulasAdminGeneral", listParameters);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ds;
+        }
     }
 }

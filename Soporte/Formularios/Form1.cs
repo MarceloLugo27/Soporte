@@ -101,5 +101,11 @@ namespace Soporte
         {
 
         }
+
+        private void administrativosgeneralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frmListaReporteAdminGeneral listaGeneral = new Reportes.frmListaReporteAdminGeneral();
+            listaGeneral.Show();
+        }
     }
 }
