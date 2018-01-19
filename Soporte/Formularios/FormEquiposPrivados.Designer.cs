@@ -61,7 +61,7 @@
             this.gbEquiposPrivados.Controls.Add(this.dgvAulasPrivadas);
             this.gbEquiposPrivados.Location = new System.Drawing.Point(12, 12);
             this.gbEquiposPrivados.Name = "gbEquiposPrivados";
-            this.gbEquiposPrivados.Size = new System.Drawing.Size(153, 343);
+            this.gbEquiposPrivados.Size = new System.Drawing.Size(460, 343);
             this.gbEquiposPrivados.TabIndex = 2;
             this.gbEquiposPrivados.TabStop = false;
             this.gbEquiposPrivados.Text = "Equipos privados";
@@ -71,7 +71,7 @@
             this.dgvAulasPrivadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAulasPrivadas.Location = new System.Drawing.Point(6, 19);
             this.dgvAulasPrivadas.Name = "dgvAulasPrivadas";
-            this.dgvAulasPrivadas.Size = new System.Drawing.Size(141, 318);
+            this.dgvAulasPrivadas.Size = new System.Drawing.Size(448, 318);
             this.dgvAulasPrivadas.TabIndex = 0;
             this.dgvAulasPrivadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAulasPrivadas_CellContentClick);
             this.dgvAulasPrivadas.CurrentCellChanged += new System.EventHandler(this.dgvAulasPrivadas_CurrentCellChanged);
@@ -87,7 +87,7 @@
             this.gbRevision.Controls.Add(this.chbTeclado);
             this.gbRevision.Controls.Add(this.chbMonitor);
             this.gbRevision.Controls.Add(this.chbCPU);
-            this.gbRevision.Location = new System.Drawing.Point(174, 31);
+            this.gbRevision.Location = new System.Drawing.Point(481, 12);
             this.gbRevision.Name = "gbRevision";
             this.gbRevision.Size = new System.Drawing.Size(221, 148);
             this.gbRevision.TabIndex = 5;
@@ -189,7 +189,7 @@
             this.gbAsistentes.Controls.Add(this.cbAsistente3);
             this.gbAsistentes.Controls.Add(this.cbAsistente2);
             this.gbAsistentes.Controls.Add(this.cbAsistente1);
-            this.gbAsistentes.Location = new System.Drawing.Point(403, 31);
+            this.gbAsistentes.Location = new System.Drawing.Point(710, 12);
             this.gbAsistentes.Name = "gbAsistentes";
             this.gbAsistentes.Size = new System.Drawing.Size(150, 148);
             this.gbAsistentes.TabIndex = 7;
@@ -225,7 +225,7 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(432, 297);
+            this.btnAñadir.Location = new System.Drawing.Point(739, 278);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(121, 52);
             this.btnAñadir.TabIndex = 17;
@@ -236,7 +236,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(171, 265);
+            this.label1.Location = new System.Drawing.Point(478, 246);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 16;
@@ -244,14 +244,14 @@
             // 
             // dtpFechaRevision
             // 
-            this.dtpFechaRevision.Location = new System.Drawing.Point(279, 259);
+            this.dtpFechaRevision.Location = new System.Drawing.Point(586, 240);
             this.dtpFechaRevision.Name = "dtpFechaRevision";
             this.dtpFechaRevision.Size = new System.Drawing.Size(274, 20);
             this.dtpFechaRevision.TabIndex = 15;
             // 
             // tbObservaciones
             // 
-            this.tbObservaciones.Location = new System.Drawing.Point(174, 198);
+            this.tbObservaciones.Location = new System.Drawing.Point(481, 179);
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
             this.tbObservaciones.Size = new System.Drawing.Size(379, 55);
@@ -260,7 +260,7 @@
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(171, 182);
+            this.lblObservaciones.Location = new System.Drawing.Point(478, 163);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
             this.lblObservaciones.TabIndex = 13;
@@ -270,7 +270,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(171, 315);
+            this.lblUsuario.Location = new System.Drawing.Point(478, 296);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(79, 16);
             this.lblUsuario.TabIndex = 12;
@@ -280,7 +280,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 367);
+            this.ClientSize = new System.Drawing.Size(872, 365);
             this.Controls.Add(this.btnAñadir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaRevision);

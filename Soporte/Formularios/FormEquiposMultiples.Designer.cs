@@ -65,7 +65,7 @@
             this.dgvAulasMultiples.Location = new System.Drawing.Point(6, 19);
             this.dgvAulasMultiples.Name = "dgvAulasMultiples";
             this.dgvAulasMultiples.ReadOnly = true;
-            this.dgvAulasMultiples.Size = new System.Drawing.Size(141, 286);
+            this.dgvAulasMultiples.Size = new System.Drawing.Size(517, 286);
             this.dgvAulasMultiples.TabIndex = 0;
             this.dgvAulasMultiples.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAulasMultiples_CellContentClick_1);
             this.dgvAulasMultiples.CurrentCellChanged += new System.EventHandler(this.dgvAulasMultiples_CurrentCellChanged);
@@ -75,7 +75,7 @@
             this.gbAulas.Controls.Add(this.dgvAulasMultiples);
             this.gbAulas.Location = new System.Drawing.Point(12, 12);
             this.gbAulas.Name = "gbAulas";
-            this.gbAulas.Size = new System.Drawing.Size(153, 311);
+            this.gbAulas.Size = new System.Drawing.Size(529, 311);
             this.gbAulas.TabIndex = 1;
             this.gbAulas.TabStop = false;
             this.gbAulas.Text = "Aulas";
@@ -84,7 +84,7 @@
             // 
             this.lblAula.AutoSize = true;
             this.lblAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAula.Location = new System.Drawing.Point(171, 12);
+            this.lblAula.Location = new System.Drawing.Point(547, 12);
             this.lblAula.Name = "lblAula";
             this.lblAula.Size = new System.Drawing.Size(56, 16);
             this.lblAula.TabIndex = 2;
@@ -94,7 +94,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(176, 289);
+            this.lblUsuario.Location = new System.Drawing.Point(547, 289);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(79, 16);
             this.lblUsuario.TabIndex = 2;
@@ -115,7 +115,7 @@
             this.gbRevision.Controls.Add(this.chbLimpieza);
             this.gbRevision.Controls.Add(this.chbPerifericos);
             this.gbRevision.Controls.Add(this.chbRendimiento);
-            this.gbRevision.Location = new System.Drawing.Point(174, 58);
+            this.gbRevision.Location = new System.Drawing.Point(550, 58);
             this.gbRevision.Name = "gbRevision";
             this.gbRevision.Size = new System.Drawing.Size(139, 104);
             this.gbRevision.TabIndex = 4;
@@ -146,7 +146,7 @@
             // 
             this.cbEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEquipo.FormattingEnabled = true;
-            this.cbEquipo.Location = new System.Drawing.Point(174, 31);
+            this.cbEquipo.Location = new System.Drawing.Point(550, 31);
             this.cbEquipo.Name = "cbEquipo";
             this.cbEquipo.Size = new System.Drawing.Size(121, 21);
             this.cbEquipo.TabIndex = 5;
@@ -154,7 +154,7 @@
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(174, 169);
+            this.lblObservaciones.Location = new System.Drawing.Point(550, 169);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
             this.lblObservaciones.TabIndex = 7;
@@ -162,7 +162,7 @@
             // 
             // tbObservaciones
             // 
-            this.tbObservaciones.Location = new System.Drawing.Point(174, 185);
+            this.tbObservaciones.Location = new System.Drawing.Point(550, 185);
             this.tbObservaciones.Multiline = true;
             this.tbObservaciones.Name = "tbObservaciones";
             this.tbObservaciones.Size = new System.Drawing.Size(308, 55);
@@ -171,7 +171,7 @@
             // dtpFechaRevision
             // 
             this.dtpFechaRevision.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtpFechaRevision.Location = new System.Drawing.Point(282, 245);
+            this.dtpFechaRevision.Location = new System.Drawing.Point(658, 246);
             this.dtpFechaRevision.Name = "dtpFechaRevision";
             this.dtpFechaRevision.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaRevision.TabIndex = 9;
@@ -179,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(171, 246);
+            this.label1.Location = new System.Drawing.Point(547, 252);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 10;
@@ -187,7 +187,7 @@
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(361, 271);
+            this.btnAñadir.Location = new System.Drawing.Point(737, 271);
             this.btnAñadir.Name = "btnAñadir";
             this.btnAñadir.Size = new System.Drawing.Size(121, 52);
             this.btnAñadir.TabIndex = 11;
@@ -200,7 +200,7 @@
             this.gbAsistentes.Controls.Add(this.cbAsistente3);
             this.gbAsistentes.Controls.Add(this.cbAsistente2);
             this.gbAsistentes.Controls.Add(this.cbAsistente1);
-            this.gbAsistentes.Location = new System.Drawing.Point(332, 58);
+            this.gbAsistentes.Location = new System.Drawing.Point(708, 58);
             this.gbAsistentes.Name = "gbAsistentes";
             this.gbAsistentes.Size = new System.Drawing.Size(150, 104);
             this.gbAsistentes.TabIndex = 18;
@@ -236,7 +236,7 @@
             // 
             // btnReiniciar
             // 
-            this.btnReiniciar.Location = new System.Drawing.Point(424, 12);
+            this.btnReiniciar.Location = new System.Drawing.Point(800, 12);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(60, 23);
             this.btnReiniciar.TabIndex = 19;
@@ -248,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 335);
+            this.ClientSize = new System.Drawing.Size(872, 329);
             this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.gbAsistentes);
             this.Controls.Add(this.btnAñadir);

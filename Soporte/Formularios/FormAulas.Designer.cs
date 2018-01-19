@@ -34,9 +34,9 @@
             this.btnAñadir = new System.Windows.Forms.Button();
             this.chbUsosMultiples = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbAulaPrivada = new System.Windows.Forms.RadioButton();
-            this.rdbAulaMultiple = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rdbAulaMultiple = new System.Windows.Forms.RadioButton();
+            this.rdbAulaPrivada = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAulas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             // 
             this.tbNombreAula.Location = new System.Drawing.Point(102, 20);
             this.tbNombreAula.Name = "tbNombreAula";
-            this.tbNombreAula.Size = new System.Drawing.Size(100, 20);
+            this.tbNombreAula.Size = new System.Drawing.Size(210, 20);
             this.tbNombreAula.TabIndex = 1;
             // 
             // dgvAulas
@@ -64,17 +64,17 @@
             this.dgvAulas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvAulas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvAulas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAulas.Location = new System.Drawing.Point(12, 143);
+            this.dgvAulas.Location = new System.Drawing.Point(12, 105);
             this.dgvAulas.Name = "dgvAulas";
             this.dgvAulas.ReadOnly = true;
-            this.dgvAulas.Size = new System.Drawing.Size(307, 150);
+            this.dgvAulas.Size = new System.Drawing.Size(611, 295);
             this.dgvAulas.TabIndex = 2;
             // 
             // btnAñadir
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(244, 117);
+            this.btnAñadir.Location = new System.Drawing.Point(510, 52);
             this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(75, 20);
+            this.btnAñadir.Size = new System.Drawing.Size(113, 47);
             this.btnAñadir.TabIndex = 3;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // chbUsosMultiples
             // 
             this.chbUsosMultiples.AutoSize = true;
-            this.chbUsosMultiples.Location = new System.Drawing.Point(12, 46);
+            this.chbUsosMultiples.Location = new System.Drawing.Point(12, 67);
             this.chbUsosMultiples.Name = "chbUsosMultiples";
             this.chbUsosMultiples.Size = new System.Drawing.Size(115, 17);
             this.chbUsosMultiples.TabIndex = 2;
@@ -98,10 +98,34 @@
             this.groupBox1.Controls.Add(this.rdbAulaPrivada);
             this.groupBox1.Location = new System.Drawing.Point(12, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(125, 91);
+            this.groupBox1.Size = new System.Drawing.Size(301, 52);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de aula";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(187, 21);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(113, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Aula administrativa";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // rdbAulaMultiple
+            // 
+            this.rdbAulaMultiple.AutoSize = true;
+            this.rdbAulaMultiple.Location = new System.Drawing.Point(97, 21);
+            this.rdbAulaMultiple.Name = "rdbAulaMultiple";
+            this.rdbAulaMultiple.Size = new System.Drawing.Size(84, 17);
+            this.rdbAulaMultiple.TabIndex = 1;
+            this.rdbAulaMultiple.TabStop = true;
+            this.rdbAulaMultiple.Text = "Aula múltiple";
+            this.rdbAulaMultiple.UseVisualStyleBackColor = true;
+            this.rdbAulaMultiple.CheckedChanged += new System.EventHandler(this.rdbAulaMultiple_CheckedChanged);
             // 
             // rdbAulaPrivada
             // 
@@ -115,35 +139,11 @@
             this.rdbAulaPrivada.UseVisualStyleBackColor = true;
             this.rdbAulaPrivada.CheckedChanged += new System.EventHandler(this.rdbAulaPrivada_CheckedChanged);
             // 
-            // rdbAulaMultiple
-            // 
-            this.rdbAulaMultiple.AutoSize = true;
-            this.rdbAulaMultiple.Location = new System.Drawing.Point(7, 44);
-            this.rdbAulaMultiple.Name = "rdbAulaMultiple";
-            this.rdbAulaMultiple.Size = new System.Drawing.Size(84, 17);
-            this.rdbAulaMultiple.TabIndex = 1;
-            this.rdbAulaMultiple.TabStop = true;
-            this.rdbAulaMultiple.Text = "Aula múltiple";
-            this.rdbAulaMultiple.UseVisualStyleBackColor = true;
-            this.rdbAulaMultiple.CheckedChanged += new System.EventHandler(this.rdbAulaMultiple_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 68);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(113, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Aula administrativa";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
             // FormAulas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 309);
+            this.ClientSize = new System.Drawing.Size(635, 412);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chbUsosMultiples);
             this.Controls.Add(this.btnAñadir);
