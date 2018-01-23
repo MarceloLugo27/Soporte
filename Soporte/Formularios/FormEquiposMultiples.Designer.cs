@@ -63,8 +63,12 @@
             this.dgvAulasMultiples.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dgvAulasMultiples.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAulasMultiples.Location = new System.Drawing.Point(6, 19);
+            this.dgvAulasMultiples.MultiSelect = false;
             this.dgvAulasMultiples.Name = "dgvAulasMultiples";
             this.dgvAulasMultiples.ReadOnly = true;
+            this.dgvAulasMultiples.RowHeadersVisible = false;
+            this.dgvAulasMultiples.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvAulasMultiples.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAulasMultiples.Size = new System.Drawing.Size(517, 286);
             this.dgvAulasMultiples.TabIndex = 0;
             this.dgvAulasMultiples.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAulasMultiples_CellContentClick_1);

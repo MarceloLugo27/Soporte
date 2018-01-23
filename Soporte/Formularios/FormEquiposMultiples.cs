@@ -65,6 +65,7 @@ namespace Soporte.Formularios
                     cbEquipo.ValueMember = "IDHardware";
                     cbEquipo.DisplayMember = "strUsuarioPC";
                     dgvAulasMultiples.Enabled = false;
+                    gbAulas.Enabled = false;
                 }
             }
         }
@@ -102,9 +103,17 @@ namespace Soporte.Formularios
                 cbAsistente1.SelectedIndex = 0;
                 cbAsistente2.SelectedIndex = 1;
                 cbAsistente3.SelectedIndex = 3;
-                chbLimpieza.Checked = false;
-                chbPerifericos.Checked = false;
-                chbRendimiento.Checked = false;
+                //chbLimpieza.Checked = false;
+                //chbPerifericos.Checked = false;
+                //chbRendimiento.Checked = false;
+                if (cbEquipo.SelectedIndex < cbEquipo.Items.Count)
+                {
+                cbEquipo.SelectedIndex = cbEquipo.SelectedIndex + 1;
+                }
+                else
+                {
+                    MessageBox.Show("Se han terminado de dar de registrar todos los equipos del aula.");
+                }
                 tbObservaciones.Text = "";
             }
             else
@@ -116,6 +125,7 @@ namespace Soporte.Formularios
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             dgvAulasMultiples.Enabled = true;
+            gbAulas.Enabled = true;
         }
 
         private void dgvAulasMultiples_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

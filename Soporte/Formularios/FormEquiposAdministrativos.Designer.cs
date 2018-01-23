@@ -196,9 +196,18 @@
             // 
             // dgvAulasAdministrativas
             // 
+            this.dgvAulasAdministrativas.AllowUserToAddRows = false;
+            this.dgvAulasAdministrativas.AllowUserToDeleteRows = false;
+            this.dgvAulasAdministrativas.AllowUserToOrderColumns = true;
+            this.dgvAulasAdministrativas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvAulasAdministrativas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAulasAdministrativas.Location = new System.Drawing.Point(6, 19);
+            this.dgvAulasAdministrativas.MultiSelect = false;
             this.dgvAulasAdministrativas.Name = "dgvAulasAdministrativas";
+            this.dgvAulasAdministrativas.ReadOnly = true;
+            this.dgvAulasAdministrativas.RowHeadersVisible = false;
+            this.dgvAulasAdministrativas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvAulasAdministrativas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAulasAdministrativas.Size = new System.Drawing.Size(519, 286);
             this.dgvAulasAdministrativas.TabIndex = 0;
             this.dgvAulasAdministrativas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAulasAdministrativas_CellContentClick);

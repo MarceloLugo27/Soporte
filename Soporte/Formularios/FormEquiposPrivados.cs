@@ -52,7 +52,7 @@ namespace Soporte.Formularios
 
             DataTable respuesta = new DataTable();
 
-            revision.IntIDUsuario = 1;
+            revision.IntIDUsuario = Conexion.IDUsuario;
             revision.IntIDHardware = IDHardware;
             revision.StrObservaciones = tbObservaciones.Text;
             revision.DateFechaRegistro = dtpFechaRevision.Value;
@@ -107,7 +107,6 @@ namespace Soporte.Formularios
             if (dgvAulasPrivadas.SelectedCells.Count > 0)
             {
                 IDHardware = int.Parse(dgvAulasPrivadas.CurrentRow.Cells[0].Value.ToString());
-
             }
         }
     }

@@ -38,8 +38,13 @@
             // dgvListaReportesPrivados
             // 
             this.dgvListaReportesPrivados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaReportesPrivados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaReportesPrivados.Location = new System.Drawing.Point(6, 19);
+            this.dgvListaReportesPrivados.MultiSelect = false;
             this.dgvListaReportesPrivados.Name = "dgvListaReportesPrivados";
+            this.dgvListaReportesPrivados.ReadOnly = true;
+            this.dgvListaReportesPrivados.RowHeadersVisible = false;
+            this.dgvListaReportesPrivados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaReportesPrivados.Size = new System.Drawing.Size(682, 252);
             this.dgvListaReportesPrivados.TabIndex = 0;
             this.dgvListaReportesPrivados.CurrentCellChanged += new System.EventHandler(this.dgvListaReportesPrivados_CurrentCellChanged);

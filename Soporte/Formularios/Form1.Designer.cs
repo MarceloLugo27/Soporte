@@ -37,6 +37,7 @@
             this.aulasPrivadasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aulasUsosMúltiplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrativosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.administrativosgeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,8 +46,11 @@
             this.aulastoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirAulasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plazosDeTiempoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administrativosgeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -57,7 +61,7 @@
             this.sistemaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(472, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1020, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "MenuPrincipal";
             // 
@@ -122,7 +126,15 @@
             this.administrativosToolStripMenuItem1.Name = "administrativosToolStripMenuItem1";
             this.administrativosToolStripMenuItem1.Size = new System.Drawing.Size(207, 22);
             this.administrativosToolStripMenuItem1.Text = "Administrativos";
+            this.administrativosToolStripMenuItem1.Visible = false;
             this.administrativosToolStripMenuItem1.Click += new System.EventHandler(this.administrativosToolStripMenuItem1_Click);
+            // 
+            // administrativosgeneralToolStripMenuItem
+            // 
+            this.administrativosgeneralToolStripMenuItem.Name = "administrativosgeneralToolStripMenuItem";
+            this.administrativosgeneralToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.administrativosgeneralToolStripMenuItem.Text = "Administrativos (general)";
+            this.administrativosgeneralToolStripMenuItem.Click += new System.EventHandler(this.administrativosgeneralToolStripMenuItem_Click);
             // 
             // sistemaToolStripMenuItem
             // 
@@ -189,18 +201,29 @@
             this.plazosDeTiempoToolStripMenuItem.Text = "Plazos de tiempo";
             this.plazosDeTiempoToolStripMenuItem.Click += new System.EventHandler(this.plazosDeTiempoToolStripMenuItem_Click);
             // 
-            // administrativosgeneralToolStripMenuItem
+            // dataGridView1
             // 
-            this.administrativosgeneralToolStripMenuItem.Name = "administrativosgeneralToolStripMenuItem";
-            this.administrativosgeneralToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.administrativosgeneralToolStripMenuItem.Text = "Administrativos (general)";
-            this.administrativosgeneralToolStripMenuItem.Click += new System.EventHandler(this.administrativosgeneralToolStripMenuItem_Click);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(701, 119);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(307, 416);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 119);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(307, 416);
+            this.dataGridView2.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 321);
+            this.ClientSize = new System.Drawing.Size(1020, 547);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -209,6 +232,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +259,8 @@
         private System.Windows.Forms.ToolStripMenuItem editarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirAulasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrativosgeneralToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 

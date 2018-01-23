@@ -68,9 +68,17 @@
             // 
             // dgvAulasPrivadas
             // 
+            this.dgvAulasPrivadas.AllowUserToAddRows = false;
+            this.dgvAulasPrivadas.AllowUserToDeleteRows = false;
+            this.dgvAulasPrivadas.AllowUserToResizeRows = false;
             this.dgvAulasPrivadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAulasPrivadas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvAulasPrivadas.Location = new System.Drawing.Point(6, 19);
             this.dgvAulasPrivadas.Name = "dgvAulasPrivadas";
+            this.dgvAulasPrivadas.ReadOnly = true;
+            this.dgvAulasPrivadas.RowHeadersVisible = false;
+            this.dgvAulasPrivadas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvAulasPrivadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAulasPrivadas.Size = new System.Drawing.Size(448, 318);
             this.dgvAulasPrivadas.TabIndex = 0;
             this.dgvAulasPrivadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAulasPrivadas_CellContentClick);

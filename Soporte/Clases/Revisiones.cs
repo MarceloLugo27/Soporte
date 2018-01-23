@@ -54,7 +54,7 @@ namespace Soporte.Clases
         {
             DataSet ds = new DataSet();
             List<SqlParameter> listParameters = new List<SqlParameter>();
-            listParameters.Add(new SqlParameter { ParameterName = "@pIDUsuario", SqlDbType = SqlDbType.Int, Value = 1 });
+            listParameters.Add(new SqlParameter { ParameterName = "@pIDUsuario", SqlDbType = SqlDbType.Int, Value = Equipo.IntIDUsuario });
             listParameters.Add(new SqlParameter { ParameterName = "@pIDHardware", SqlDbType = SqlDbType.Int, Value = Equipo.IntIDHardware });
             listParameters.Add(new SqlParameter { ParameterName = "@pDateFechaRegistro", SqlDbType = SqlDbType.DateTime2, Value = Equipo.DateFechaRegistro });
             listParameters.Add(new SqlParameter { ParameterName = "@pStrObservaciones", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrObservaciones });
