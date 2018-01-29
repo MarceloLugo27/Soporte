@@ -23,7 +23,7 @@ namespace Soporte.Reportes
 
         private void frmListaReporteAdminGeneral_Load(object sender, EventArgs e)
         {
-            dsFechas = Conexion.FechaRevisionesSelect(0);
+            dsFechas = Conexion.FechaRevisionesSelect(1);
 
             cbPeriodoTiempo.DataSource = new DataView(dsFechas.Tables[0]);
             cbPeriodoTiempo.ValueMember = "IDFecha";
@@ -34,7 +34,7 @@ namespace Soporte.Reportes
 
         private void cbPeriodoTiempo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            dtFechasInicializar = Conexion.FechaRevisionesSelect(0, int.Parse(cbPeriodoTiempo.SelectedValue.ToString())).Tables[0];
+            dtFechasInicializar = Conexion.FechaRevisionesSelect(1, int.Parse(cbPeriodoTiempo.SelectedValue.ToString())).Tables[0];
             Conexion.FechaInicio = DateTime.Parse(dtFechasInicializar.Rows[0][2].ToString());
             Conexion.FechaFinal = DateTime.Parse(dtFechasInicializar.Rows[0][4].ToString());
         }

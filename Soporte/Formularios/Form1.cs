@@ -13,10 +13,38 @@ namespace Soporte
 {
     public partial class Form1 : Form
     {
+
+        public static Nullable<DateTime> FechaInicio;
+        public static Nullable<DateTime> FechaIntermedia;
+        public static Nullable<DateTime> FechaFinal;
+        DataSet dsPeriodoSemestral = new DataSet();
+        DataSet dsPeriodoAnual = new DataSet();
         public Form1()
         {
             InitializeComponent();
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dsPeriodoSemestral = Conexion.MonitorRevisiones(0);
+
+            cbPeriodoSemestral.DataSource = dsPeriodoSemestral.Tables[0];
+
+
+
+            if (Conexion.IDUsuario == 1 || Conexion.IDUsuario == 2)
+            {
+                sistemaToolStripMenuItem.Visible = true;
+            }
+
+        }
+
+        #region Menus
 
         private void aulasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,11 +82,6 @@ namespace Soporte
             formListaReportesMultiples.ShowDialog();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void administrativosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Reportes.ArchivosRDLC.frmListaReportesAdmin frmListaAdmin = new Reportes.ArchivosRDLC.frmListaReportesAdmin();
@@ -69,14 +92,6 @@ namespace Soporte
         {
            
 
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            if (Conexion.IDUsuario == 1 || Conexion.IDUsuario == 2)
-            {
-                sistemaToolStripMenuItem.Visible = true;
-            }
         }
 
         private void agregarEquiposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,5 +122,7 @@ namespace Soporte
             Reportes.frmListaReporteAdminGeneral listaGeneral = new Reportes.frmListaReporteAdminGeneral();
             listaGeneral.Show();
         }
+        #endregion
+
     }
 }

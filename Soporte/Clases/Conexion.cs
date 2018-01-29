@@ -13,6 +13,7 @@ namespace Soporte.Clases
     {
         public static int IDReporte;
         public static DateTime FechaInicio;
+        public static DateTime FechaIntermedia;
         public static DateTime FechaFinal;
 
         public static String Username;
@@ -70,6 +71,25 @@ namespace Soporte.Clases
             try
             {
                 ds = Conexion.execute_sp("FechaRevisionesSelect", listParameters);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ds;
+        }
+
+        public static DataSet MonitorRevisiones(int TipoPeriodo)
+        {
+            DataSet ds = new DataSet();
+            List<SqlParameter> listParameters = new List<SqlParameter>
+            {
+                new SqlParameter { ParameterName = "@pIntTipoPeriodo", SqlDbType = SqlDbType.Int, Value = TipoPeriodo }
+            };
+
+            try
+            {
+                ds = Conexion.execute_sp("MonitorRevisiones", listParameters);
             }
             catch (Exception ex)
             {

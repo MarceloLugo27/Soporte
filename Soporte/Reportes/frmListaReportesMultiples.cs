@@ -29,6 +29,8 @@ namespace Soporte.Reportes
             //dsAulaMultiple = RevisionEquiposMultiples.ListaReportesAulasMultiples();
             dsFechas = Conexion.FechaRevisionesSelect(0);
 
+            
+
             cbPeriodoTiempo.DataSource = new DataView(dsFechas.Tables[0]);
             cbPeriodoTiempo.ValueMember = "IDFecha";
             cbPeriodoTiempo.DisplayMember = "strDescripcionFecha";
