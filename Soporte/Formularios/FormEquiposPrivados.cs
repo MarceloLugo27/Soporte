@@ -52,12 +52,12 @@ namespace Soporte.Formularios
 
             DataTable respuesta = new DataTable();
 
+            
             revision.IntIDUsuario = Conexion.IDUsuario;
             revision.IntIDHardware = IDHardware;
             revision.StrObservaciones = tbObservaciones.Text;
             revision.DateFechaRegistro = dtpFechaRevision.Value;
-
-            //corregir
+            
             revision.DateFechaIngresoSistema = dtpFechaRevision.Value;
             revision.IntIDAsistente1 = int.Parse(cbAsistente1.SelectedValue.ToString());
             revision.IntIDAsistente2 = int.Parse(cbAsistente2.SelectedValue.ToString());
@@ -78,8 +78,8 @@ namespace Soporte.Formularios
             {
                 MessageBox.Show("Registro dado de alta con éxito.");
                 cbAsistente1.SelectedIndex = 0;
-                cbAsistente2.SelectedIndex = 1;
-                cbAsistente3.SelectedIndex = 3;
+                cbAsistente2.SelectedIndex = 0;
+                cbAsistente3.SelectedIndex = 0;
                 chbAntivirus.Checked = false;
                 chbCableUSB.Checked = false;
                 chbCPU.Checked = false;

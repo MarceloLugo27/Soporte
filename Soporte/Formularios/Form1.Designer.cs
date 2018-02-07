@@ -46,20 +46,20 @@
             this.aulastoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirAulasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plazosDeTiempoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEquiposSemestrales = new System.Windows.Forms.DataGridView();
             this.gbPeriodoSemestral = new System.Windows.Forms.GroupBox();
-            this.cbPeriodoSemestral = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbPeriodoSemestral = new System.Windows.Forms.ComboBox();
             this.gbPeriodoAnual = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbPeriodoAnual = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvEquiposAnuales = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSemestrales)).BeginInit();
             this.gbPeriodoSemestral.SuspendLayout();
             this.gbPeriodoAnual.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposAnuales)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -210,34 +210,33 @@
             this.plazosDeTiempoToolStripMenuItem.Text = "Plazos de tiempo";
             this.plazosDeTiempoToolStripMenuItem.Click += new System.EventHandler(this.plazosDeTiempoToolStripMenuItem_Click);
             // 
-            // dataGridView1
+            // dgvEquiposSemestrales
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(338, 374);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvEquiposSemestrales.AllowUserToAddRows = false;
+            this.dgvEquiposSemestrales.AllowUserToDeleteRows = false;
+            this.dgvEquiposSemestrales.AllowUserToResizeColumns = false;
+            this.dgvEquiposSemestrales.AllowUserToResizeRows = false;
+            this.dgvEquiposSemestrales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquiposSemestrales.Location = new System.Drawing.Point(6, 73);
+            this.dgvEquiposSemestrales.MultiSelect = false;
+            this.dgvEquiposSemestrales.Name = "dgvEquiposSemestrales";
+            this.dgvEquiposSemestrales.ReadOnly = true;
+            this.dgvEquiposSemestrales.RowHeadersVisible = false;
+            this.dgvEquiposSemestrales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEquiposSemestrales.Size = new System.Drawing.Size(338, 374);
+            this.dgvEquiposSemestrales.TabIndex = 2;
             // 
             // gbPeriodoSemestral
             // 
             this.gbPeriodoSemestral.Controls.Add(this.label1);
             this.gbPeriodoSemestral.Controls.Add(this.cbPeriodoSemestral);
-            this.gbPeriodoSemestral.Controls.Add(this.dataGridView1);
+            this.gbPeriodoSemestral.Controls.Add(this.dgvEquiposSemestrales);
             this.gbPeriodoSemestral.Location = new System.Drawing.Point(12, 82);
             this.gbPeriodoSemestral.Name = "gbPeriodoSemestral";
             this.gbPeriodoSemestral.Size = new System.Drawing.Size(350, 453);
             this.gbPeriodoSemestral.TabIndex = 3;
             this.gbPeriodoSemestral.TabStop = false;
             this.gbPeriodoSemestral.Text = "Periodo semestral";
-            // 
-            // cbPeriodoSemestral
-            // 
-            this.cbPeriodoSemestral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeriodoSemestral.FormattingEnabled = true;
-            this.cbPeriodoSemestral.Location = new System.Drawing.Point(58, 33);
-            this.cbPeriodoSemestral.Name = "cbPeriodoSemestral";
-            this.cbPeriodoSemestral.Size = new System.Drawing.Size(286, 21);
-            this.cbPeriodoSemestral.TabIndex = 3;
             // 
             // label1
             // 
@@ -248,11 +247,20 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Periodo:";
             // 
+            // cbPeriodoSemestral
+            // 
+            this.cbPeriodoSemestral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodoSemestral.FormattingEnabled = true;
+            this.cbPeriodoSemestral.Location = new System.Drawing.Point(58, 33);
+            this.cbPeriodoSemestral.Name = "cbPeriodoSemestral";
+            this.cbPeriodoSemestral.Size = new System.Drawing.Size(286, 21);
+            this.cbPeriodoSemestral.TabIndex = 3;
+            // 
             // gbPeriodoAnual
             // 
             this.gbPeriodoAnual.Controls.Add(this.label2);
             this.gbPeriodoAnual.Controls.Add(this.cbPeriodoAnual);
-            this.gbPeriodoAnual.Controls.Add(this.dataGridView2);
+            this.gbPeriodoAnual.Controls.Add(this.dgvEquiposAnuales);
             this.gbPeriodoAnual.Location = new System.Drawing.Point(658, 82);
             this.gbPeriodoAnual.Name = "gbPeriodoAnual";
             this.gbPeriodoAnual.Size = new System.Drawing.Size(350, 453);
@@ -278,13 +286,20 @@
             this.cbPeriodoAnual.Size = new System.Drawing.Size(286, 21);
             this.cbPeriodoAnual.TabIndex = 3;
             // 
-            // dataGridView2
+            // dgvEquiposAnuales
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 73);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(338, 374);
-            this.dataGridView2.TabIndex = 2;
+            this.dgvEquiposAnuales.AllowUserToAddRows = false;
+            this.dgvEquiposAnuales.AllowUserToDeleteRows = false;
+            this.dgvEquiposAnuales.AllowUserToResizeColumns = false;
+            this.dgvEquiposAnuales.AllowUserToResizeRows = false;
+            this.dgvEquiposAnuales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquiposAnuales.Location = new System.Drawing.Point(6, 73);
+            this.dgvEquiposAnuales.Name = "dgvEquiposAnuales";
+            this.dgvEquiposAnuales.ReadOnly = true;
+            this.dgvEquiposAnuales.RowHeadersVisible = false;
+            this.dgvEquiposAnuales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEquiposAnuales.Size = new System.Drawing.Size(338, 374);
+            this.dgvEquiposAnuales.TabIndex = 2;
             // 
             // btnActualizar
             // 
@@ -294,6 +309,7 @@
             this.btnActualizar.TabIndex = 6;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // Form1
             // 
@@ -311,12 +327,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSemestrales)).EndInit();
             this.gbPeriodoSemestral.ResumeLayout(false);
             this.gbPeriodoSemestral.PerformLayout();
             this.gbPeriodoAnual.ResumeLayout(false);
             this.gbPeriodoAnual.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposAnuales)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,14 +358,14 @@
         private System.Windows.Forms.ToolStripMenuItem editarEquiposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirAulasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrativosgeneralToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEquiposSemestrales;
         private System.Windows.Forms.GroupBox gbPeriodoSemestral;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbPeriodoSemestral;
         private System.Windows.Forms.GroupBox gbPeriodoAnual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbPeriodoAnual;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvEquiposAnuales;
         private System.Windows.Forms.Button btnActualizar;
     }
 }

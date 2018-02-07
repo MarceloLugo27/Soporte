@@ -17,11 +17,56 @@ namespace Soporte
         public static Nullable<DateTime> FechaInicio;
         public static Nullable<DateTime> FechaIntermedia;
         public static Nullable<DateTime> FechaFinal;
+
+        public static Nullable<DateTime> FechaInicio1;
+        public static Nullable<DateTime> FechaIntermedia1;
+        public static Nullable<DateTime> FechaFinal1;
+
         DataSet dsPeriodoSemestral = new DataSet();
         DataSet dsPeriodoAnual = new DataSet();
+
+        DataSet dsFechasSem = new DataSet();
+        DataSet dsFechasAn = new DataSet();
+
+        DataTable dtFechaSemestral = new DataTable();
+        DataTable dtFechaAnual = new DataTable();
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void RevisarEquipos()
+         {
+            int ValorSem;
+            dsPeriodoSemestral = Conexion.MonitorRevisiones(0);
+            dgvEquiposSemestrales.DataSource = dsPeriodoSemestral.Tables[0];
+
+
+            dsFechasSem = Conexion.FechaRevisionesSelect(0);
+
+            cbPeriodoSemestral.DataSource = new DataView(dsFechasSem.Tables[0]);
+            cbPeriodoSemestral.ValueMember = "IDFecha";
+            cbPeriodoSemestral.DisplayMember = "strDescripcionFecha";
+
+            dtFechaSemestral = Conexion.FechaRevisionesSelect(0, int.Parse(cbPeriodoSemestral.SelectedValue.ToString())).Tables[0];
+            FechaInicio = DateTime.Parse(dtFechaSemestral.Rows[0][2].ToString());
+            FechaIntermedia = DateTime.Parse(dtFechaSemestral.Rows[0][3].ToString());
+            FechaFinal = DateTime.Parse(dtFechaSemestral.Rows[0][4].ToString());
+
+            for (int i = 0; i < dgvEquiposSemestrales.Rows.Count; i++)
+            {
+                ValorSem = int.Parse(dgvEquiposSemestrales.Rows[i].Cells[3].Value.ToString());
+                if (ValorSem == 0)
+                {
+                    dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                {
+                    dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
+            }
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,11 +76,7 @@ namespace Soporte
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dsPeriodoSemestral = Conexion.MonitorRevisiones(0);
-
-            cbPeriodoSemestral.DataSource = dsPeriodoSemestral.Tables[0];
-
-
+            //RevisarEquipos();
 
             if (Conexion.IDUsuario == 1 || Conexion.IDUsuario == 2)
             {
@@ -124,5 +165,9 @@ namespace Soporte
         }
         #endregion
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            RevisarEquipos();
+        }
     }
 }

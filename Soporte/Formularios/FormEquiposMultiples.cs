@@ -101,12 +101,12 @@ namespace Soporte.Formularios
             {
                 MessageBox.Show("Registro dado de alta con éxito.");
                 cbAsistente1.SelectedIndex = 0;
-                cbAsistente2.SelectedIndex = 1;
-                cbAsistente3.SelectedIndex = 3;
+                cbAsistente2.SelectedIndex = 0;
+                cbAsistente3.SelectedIndex = 0;
                 //chbLimpieza.Checked = false;
                 //chbPerifericos.Checked = false;
                 //chbRendimiento.Checked = false;
-                if (cbEquipo.SelectedIndex < cbEquipo.Items.Count)
+                if (cbEquipo.SelectedIndex < cbEquipo.Items.Count - 1)
                 {
                 cbEquipo.SelectedIndex = cbEquipo.SelectedIndex + 1;
                 }
