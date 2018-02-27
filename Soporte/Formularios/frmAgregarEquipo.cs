@@ -67,7 +67,15 @@ namespace Soporte.Formularios
             if (cbModoEdición.Checked == false)
             {
                 gbListaEquipos.Enabled = false;
-
+                btnEjecutar.Text = "Añadir equipo";
+                gbListaEquipos.Enabled = false;
+                tbNumeroSerie.Text = "";
+                tbTAG.Text = "";
+                tbUsuarioPC.Text = "";
+                tbSistemaOperativo.Text = "";
+                tbDominio.Text = "";
+                tbProcesador.Text = "";
+                tbFabricante.Text = "";
             }
         }
     }

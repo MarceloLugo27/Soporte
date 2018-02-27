@@ -99,5 +99,31 @@ namespace Soporte.Clases
             }
             return ds;
         }
+        public static DataSet EquipoUpdate(HardwarePC Equipo)
+        {
+            DataSet ds = new DataSet();
+            List<SqlParameter> listParameters = new List<SqlParameter>();
+            listParameters.Add(new SqlParameter { ParameterName = "@pIDAula", SqlDbType = SqlDbType.Int, Value = Equipo.IntIDAula });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrTAG", SqlDbType = SqlDbType.VarChar, Value = Equipo.IntTAG });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrUsuarioPC", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrUsuarioPC });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrSistemaOperativo", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrSistemaOperativo });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrDominio", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrDominio });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrVersionSO", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrVersionSO });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrServicePack", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrServicePack });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrNombreProcesador", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrNombreProcesador });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrFabricante", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrFabricante });
+            listParameters.Add(new SqlParameter { ParameterName = "@pStrNumeroSerie", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrNumeroSerie });
+
+
+            try
+            {
+                ds = Conexion.execute_sp("PCInsertar", listParameters);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ds;
+        }
     }
 }
