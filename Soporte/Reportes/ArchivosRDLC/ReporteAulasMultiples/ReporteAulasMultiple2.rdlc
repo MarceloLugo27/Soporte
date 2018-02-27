@@ -6,7 +6,7 @@
       <Transaction>true</Transaction>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=148.234.36.192\MSL;Initial Catalog=dbSoporte</ConnectString>
+        <ConnectString>Data Source=148.234.35.76,1433\MSL;Initial Catalog=dbSoporte</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>a53b9430-0c85-4095-a372-3074e019d2a2</rd:DataSourceID>
     </DataSource>

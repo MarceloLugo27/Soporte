@@ -22,7 +22,7 @@ namespace Soporte.Clases
         public static int IDUsuario;
         
         //static String ConnectionString = @"Data Source=DESKTOP-N571H5G\MSL2014;Initial Catalog=dbSoporte;User ID=sa;Password=marcelo123";
-        static String ConnectionString = @"Data Source=148.234.36.192\MSL;Initial Catalog=dbSoporte;User ID=sa;Password=marcelo123";
+        static String ConnectionString = @"Data Source=148.234.35.76,1433\MSL;Initial Catalog=dbSoporte;User ID=sa;Password=marcelo123";
         public static DataSet execute_sp(string query, List<SqlParameter> ListParameters)
         {
             SqlCommand command;

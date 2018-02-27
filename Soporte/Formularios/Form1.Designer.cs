@@ -54,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbPeriodoAnual = new System.Windows.Forms.ComboBox();
             this.dgvEquiposAnuales = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquiposSemestrales)).BeginInit();
             this.gbPeriodoSemestral.SuspendLayout();
@@ -70,7 +69,7 @@
             this.sistemaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1020, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1304, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "MenuPrincipal";
             // 
@@ -223,7 +222,7 @@
             this.dgvEquiposSemestrales.ReadOnly = true;
             this.dgvEquiposSemestrales.RowHeadersVisible = false;
             this.dgvEquiposSemestrales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposSemestrales.Size = new System.Drawing.Size(338, 374);
+            this.dgvEquiposSemestrales.Size = new System.Drawing.Size(553, 516);
             this.dgvEquiposSemestrales.TabIndex = 2;
             // 
             // gbPeriodoSemestral
@@ -233,7 +232,7 @@
             this.gbPeriodoSemestral.Controls.Add(this.dgvEquiposSemestrales);
             this.gbPeriodoSemestral.Location = new System.Drawing.Point(12, 82);
             this.gbPeriodoSemestral.Name = "gbPeriodoSemestral";
-            this.gbPeriodoSemestral.Size = new System.Drawing.Size(350, 453);
+            this.gbPeriodoSemestral.Size = new System.Drawing.Size(565, 595);
             this.gbPeriodoSemestral.TabIndex = 3;
             this.gbPeriodoSemestral.TabStop = false;
             this.gbPeriodoSemestral.Text = "Periodo semestral";
@@ -255,15 +254,17 @@
             this.cbPeriodoSemestral.Name = "cbPeriodoSemestral";
             this.cbPeriodoSemestral.Size = new System.Drawing.Size(286, 21);
             this.cbPeriodoSemestral.TabIndex = 3;
+            this.cbPeriodoSemestral.SelectedIndexChanged += new System.EventHandler(this.cbPeriodoSemestral_SelectedIndexChanged);
+            this.cbPeriodoSemestral.SelectionChangeCommitted += new System.EventHandler(this.cbPeriodoSemestral_SelectionChangeCommitted);
             // 
             // gbPeriodoAnual
             // 
             this.gbPeriodoAnual.Controls.Add(this.label2);
             this.gbPeriodoAnual.Controls.Add(this.cbPeriodoAnual);
             this.gbPeriodoAnual.Controls.Add(this.dgvEquiposAnuales);
-            this.gbPeriodoAnual.Location = new System.Drawing.Point(658, 82);
+            this.gbPeriodoAnual.Location = new System.Drawing.Point(727, 82);
             this.gbPeriodoAnual.Name = "gbPeriodoAnual";
-            this.gbPeriodoAnual.Size = new System.Drawing.Size(350, 453);
+            this.gbPeriodoAnual.Size = new System.Drawing.Size(565, 595);
             this.gbPeriodoAnual.TabIndex = 5;
             this.gbPeriodoAnual.TabStop = false;
             this.gbPeriodoAnual.Text = "Periodo anual";
@@ -285,6 +286,8 @@
             this.cbPeriodoAnual.Name = "cbPeriodoAnual";
             this.cbPeriodoAnual.Size = new System.Drawing.Size(286, 21);
             this.cbPeriodoAnual.TabIndex = 3;
+            this.cbPeriodoAnual.SelectedIndexChanged += new System.EventHandler(this.cbPeriodoAnual_SelectedIndexChanged);
+            this.cbPeriodoAnual.SelectionChangeCommitted += new System.EventHandler(this.cbPeriodoAnual_SelectionChangeCommitted);
             // 
             // dgvEquiposAnuales
             // 
@@ -298,25 +301,14 @@
             this.dgvEquiposAnuales.ReadOnly = true;
             this.dgvEquiposAnuales.RowHeadersVisible = false;
             this.dgvEquiposAnuales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEquiposAnuales.Size = new System.Drawing.Size(338, 374);
+            this.dgvEquiposAnuales.Size = new System.Drawing.Size(553, 516);
             this.dgvEquiposAnuales.TabIndex = 2;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Location = new System.Drawing.Point(441, 470);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(142, 59);
-            this.btnActualizar.TabIndex = 6;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 547);
-            this.Controls.Add(this.btnActualizar);
+            this.ClientSize = new System.Drawing.Size(1304, 689);
             this.Controls.Add(this.gbPeriodoAnual);
             this.Controls.Add(this.gbPeriodoSemestral);
             this.Controls.Add(this.menuStrip1);
@@ -366,7 +358,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbPeriodoAnual;
         private System.Windows.Forms.DataGridView dgvEquiposAnuales;
-        private System.Windows.Forms.Button btnActualizar;
     }
 }
 

@@ -36,37 +36,87 @@ namespace Soporte
             InitializeComponent();
         }
 
-        private void RevisarEquipos()
-         {
-            int ValorSem;
+        private void GenerarCombos()
+        {
             dsPeriodoSemestral = Conexion.MonitorRevisiones(0);
-            dgvEquiposSemestrales.DataSource = dsPeriodoSemestral.Tables[0];
-
-
             dsFechasSem = Conexion.FechaRevisionesSelect(0);
-
             cbPeriodoSemestral.DataSource = new DataView(dsFechasSem.Tables[0]);
             cbPeriodoSemestral.ValueMember = "IDFecha";
             cbPeriodoSemestral.DisplayMember = "strDescripcionFecha";
+            
+            dsPeriodoAnual = Conexion.MonitorRevisiones(1);
+            dsFechasAn = Conexion.FechaRevisionesSelect(1);
+            cbPeriodoAnual.DataSource = new DataView(dsFechasAn.Tables[0]);
+            cbPeriodoAnual.ValueMember = "IDFecha";
+            cbPeriodoAnual.DisplayMember = "strDescripcionFecha";
+        }
 
-            dtFechaSemestral = Conexion.FechaRevisionesSelect(0, int.Parse(cbPeriodoSemestral.SelectedValue.ToString())).Tables[0];
-            FechaInicio = DateTime.Parse(dtFechaSemestral.Rows[0][2].ToString());
-            FechaIntermedia = DateTime.Parse(dtFechaSemestral.Rows[0][3].ToString());
-            FechaFinal = DateTime.Parse(dtFechaSemestral.Rows[0][4].ToString());
+        private void ValidarFechas(int TipoPeriodo)
+        {
+            int ValorSem;
 
-            for (int i = 0; i < dgvEquiposSemestrales.Rows.Count; i++)
+            switch (TipoPeriodo)
             {
-                ValorSem = int.Parse(dgvEquiposSemestrales.Rows[i].Cells[3].Value.ToString());
-                if (ValorSem == 0)
-                {
-                    dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                }
-                else
-                {
-                    dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.Green;
-                }
-            }
+                case 0:
+                    dsPeriodoSemestral = Conexion.MonitorRevisiones(0);
+                    dgvEquiposSemestrales.DataSource = dsPeriodoSemestral.Tables[0];
+                    dtFechaSemestral = Conexion.FechaRevisionesSelect(TipoPeriodo, int.Parse(cbPeriodoSemestral.SelectedValue.ToString())).Tables[0];
+                    FechaInicio = DateTime.Parse(dtFechaSemestral.Rows[0][2].ToString());
+                    FechaIntermedia = DateTime.Parse(dtFechaSemestral.Rows[0][3].ToString());
+                    FechaFinal = DateTime.Parse(dtFechaSemestral.Rows[0][4].ToString());
 
+                    for (int i = 0; i < dgvEquiposSemestrales.Rows.Count; i++)
+                    {
+                        ValorSem = int.Parse(dgvEquiposSemestrales.Rows[i].Cells[3].Value.ToString());
+                        DateTime.TryParse(dgvEquiposSemestrales.Rows[i].Cells[4].Value.ToString(), out DateTime ValorFecha);
+                        if (ValorFecha < FechaInicio)
+                        {
+                            dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            if (ValorFecha < FechaIntermedia)
+                            {
+                                dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                            }
+                        }
+                        else
+                        {
+                            dgvEquiposSemestrales.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                        }
+                    }
+                    break;
+                case 1:
+                    dsPeriodoAnual = Conexion.MonitorRevisiones(1);
+                    dgvEquiposAnuales.DataSource = dsPeriodoAnual.Tables[0];
+                    dtFechaAnual = Conexion.FechaRevisionesSelect(TipoPeriodo, int.Parse(cbPeriodoAnual.SelectedValue.ToString())).Tables[0];
+                    FechaInicio1 = DateTime.Parse(dtFechaAnual.Rows[0][2].ToString());
+                    FechaIntermedia1 = DateTime.Parse(dtFechaSemestral.Rows[0][3].ToString());
+                    FechaFinal1 = DateTime.Parse(dtFechaAnual.Rows[0][4].ToString());
+
+                    for (int i = 0; i < dgvEquiposAnuales.Rows.Count; i++)
+                    {
+                        ValorSem = int.Parse(dgvEquiposAnuales.Rows[i].Cells[3].Value.ToString());
+                        DateTime.TryParse(dgvEquiposAnuales.Rows[i].Cells[4].Value.ToString(), out DateTime ValorFecha);
+                        if (ValorFecha < FechaInicio)
+                        {
+                            dgvEquiposAnuales.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                            if (ValorFecha < FechaIntermedia)
+                            {
+                                dgvEquiposAnuales.Rows[i].DefaultCellStyle.BackColor = Color.White;
+                            }
+                            if ((ValorFecha - DateTime.Now).TotalDays > 360)
+                            {
+                                dgvEquiposAnuales.Rows[i].DefaultCellStyle.BackColor = Color.OrangeRed;
+                            }
+                        }
+                        else
+                        {
+                            dgvEquiposAnuales.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -76,7 +126,9 @@ namespace Soporte
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //RevisarEquipos();
+            GenerarCombos();
+            cbPeriodoSemestral.SelectedIndex = 1;
+            cbPeriodoAnual.SelectedIndex = 1;
 
             if (Conexion.IDUsuario == 1 || Conexion.IDUsuario == 2)
             {
@@ -167,7 +219,28 @@ namespace Soporte
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            RevisarEquipos();
+            //RevisarEquipos();
+            GenerarCombos();
+        }
+
+        private void cbPeriodoSemestral_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ValidarFechas(0);
+        }
+
+        private void cbPeriodoAnual_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ValidarFechas(1);
+        }
+
+        private void cbPeriodoSemestral_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ValidarFechas(0);
+        }
+
+        private void cbPeriodoAnual_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ValidarFechas(1);
         }
     }
 }

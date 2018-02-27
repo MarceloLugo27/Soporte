@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.cbAulas = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbDatosEquipo = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbNumeroSerie = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,14 +45,20 @@
             this.tbUsuarioPC = new System.Windows.Forms.TextBox();
             this.tbTAG = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAñadir = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnEjecutar = new System.Windows.Forms.Button();
+            this.gbListaEquipos = new System.Windows.Forms.GroupBox();
+            this.dgvEquipos = new System.Windows.Forms.DataGridView();
+            this.cbModoEdición = new System.Windows.Forms.CheckBox();
+            this.cbActivo = new System.Windows.Forms.CheckBox();
+            this.gbDatosEquipo.SuspendLayout();
+            this.gbListaEquipos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(758, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 0;
@@ -61,33 +67,34 @@
             // cbAulas
             // 
             this.cbAulas.FormattingEnabled = true;
-            this.cbAulas.Location = new System.Drawing.Point(49, 26);
+            this.cbAulas.Location = new System.Drawing.Point(795, 52);
             this.cbAulas.Name = "cbAulas";
             this.cbAulas.Size = new System.Drawing.Size(159, 21);
             this.cbAulas.TabIndex = 1;
             // 
-            // groupBox1
+            // gbDatosEquipo
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.tbNumeroSerie);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.tbFabricante);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.tbProcesador);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.tbDominio);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.tbSistemaOperativo);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.tbUsuarioPC);
-            this.groupBox1.Controls.Add(this.tbTAG);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 231);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos del equipo";
+            this.gbDatosEquipo.Controls.Add(this.cbActivo);
+            this.gbDatosEquipo.Controls.Add(this.label8);
+            this.gbDatosEquipo.Controls.Add(this.tbNumeroSerie);
+            this.gbDatosEquipo.Controls.Add(this.label7);
+            this.gbDatosEquipo.Controls.Add(this.tbFabricante);
+            this.gbDatosEquipo.Controls.Add(this.label6);
+            this.gbDatosEquipo.Controls.Add(this.tbProcesador);
+            this.gbDatosEquipo.Controls.Add(this.label5);
+            this.gbDatosEquipo.Controls.Add(this.tbDominio);
+            this.gbDatosEquipo.Controls.Add(this.label4);
+            this.gbDatosEquipo.Controls.Add(this.tbSistemaOperativo);
+            this.gbDatosEquipo.Controls.Add(this.label3);
+            this.gbDatosEquipo.Controls.Add(this.tbUsuarioPC);
+            this.gbDatosEquipo.Controls.Add(this.tbTAG);
+            this.gbDatosEquipo.Controls.Add(this.label2);
+            this.gbDatosEquipo.Location = new System.Drawing.Point(752, 83);
+            this.gbDatosEquipo.Name = "gbDatosEquipo";
+            this.gbDatosEquipo.Size = new System.Drawing.Size(224, 255);
+            this.gbDatosEquipo.TabIndex = 2;
+            this.gbDatosEquipo.TabStop = false;
+            this.gbDatosEquipo.Text = "Datos del equipo";
             // 
             // label8
             // 
@@ -201,30 +208,73 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "TAG:";
             // 
-            // btnAñadir
+            // btnEjecutar
             // 
-            this.btnAñadir.Location = new System.Drawing.Point(248, 226);
-            this.btnAñadir.Name = "btnAñadir";
-            this.btnAñadir.Size = new System.Drawing.Size(157, 58);
-            this.btnAñadir.TabIndex = 3;
-            this.btnAñadir.Text = "Añadir equipo";
-            this.btnAñadir.UseVisualStyleBackColor = true;
-            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
+            this.btnEjecutar.Location = new System.Drawing.Point(819, 405);
+            this.btnEjecutar.Name = "btnEjecutar";
+            this.btnEjecutar.Size = new System.Drawing.Size(157, 58);
+            this.btnEjecutar.TabIndex = 3;
+            this.btnEjecutar.Text = "Ejecutar acción";
+            this.btnEjecutar.UseVisualStyleBackColor = true;
+            this.btnEjecutar.Click += new System.EventHandler(this.btnEjecutar_Click);
+            // 
+            // gbListaEquipos
+            // 
+            this.gbListaEquipos.Controls.Add(this.dgvEquipos);
+            this.gbListaEquipos.Location = new System.Drawing.Point(12, 12);
+            this.gbListaEquipos.Name = "gbListaEquipos";
+            this.gbListaEquipos.Size = new System.Drawing.Size(734, 451);
+            this.gbListaEquipos.TabIndex = 4;
+            this.gbListaEquipos.TabStop = false;
+            this.gbListaEquipos.Text = "Lista de equipos";
+            // 
+            // dgvEquipos
+            // 
+            this.dgvEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipos.Location = new System.Drawing.Point(6, 17);
+            this.dgvEquipos.Name = "dgvEquipos";
+            this.dgvEquipos.Size = new System.Drawing.Size(722, 428);
+            this.dgvEquipos.TabIndex = 0;
+            // 
+            // cbModoEdición
+            // 
+            this.cbModoEdición.AutoSize = true;
+            this.cbModoEdición.Location = new System.Drawing.Point(761, 29);
+            this.cbModoEdición.Name = "cbModoEdición";
+            this.cbModoEdición.Size = new System.Drawing.Size(90, 17);
+            this.cbModoEdición.TabIndex = 5;
+            this.cbModoEdición.Text = "Modo edición";
+            this.cbModoEdición.UseVisualStyleBackColor = true;
+            this.cbModoEdición.CheckedChanged += new System.EventHandler(this.cbModoEdición_CheckedChanged);
+            // 
+            // cbActivo
+            // 
+            this.cbActivo.AutoSize = true;
+            this.cbActivo.Location = new System.Drawing.Point(9, 227);
+            this.cbActivo.Name = "cbActivo";
+            this.cbActivo.Size = new System.Drawing.Size(91, 17);
+            this.cbActivo.TabIndex = 14;
+            this.cbActivo.Text = "Equipo activo";
+            this.cbActivo.UseVisualStyleBackColor = true;
             // 
             // frmAgregarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 296);
-            this.Controls.Add(this.btnAñadir);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(988, 475);
+            this.Controls.Add(this.cbModoEdición);
+            this.Controls.Add(this.gbListaEquipos);
+            this.Controls.Add(this.btnEjecutar);
+            this.Controls.Add(this.gbDatosEquipo);
             this.Controls.Add(this.cbAulas);
             this.Controls.Add(this.label1);
             this.Name = "frmAgregarEquipo";
             this.Text = "frmAgregarEquipo";
             this.Load += new System.EventHandler(this.frmAgregarEquipo_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbDatosEquipo.ResumeLayout(false);
+            this.gbDatosEquipo.PerformLayout();
+            this.gbListaEquipos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +284,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbAulas;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbDatosEquipo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbNumeroSerie;
         private System.Windows.Forms.Label label7;
@@ -249,6 +299,10 @@
         private System.Windows.Forms.TextBox tbUsuarioPC;
         private System.Windows.Forms.TextBox tbTAG;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.Button btnEjecutar;
+        private System.Windows.Forms.GroupBox gbListaEquipos;
+        private System.Windows.Forms.DataGridView dgvEquipos;
+        private System.Windows.Forms.CheckBox cbActivo;
+        private System.Windows.Forms.CheckBox cbModoEdición;
     }
 }
