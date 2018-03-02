@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Soporte.Clases
 {
@@ -141,7 +142,23 @@ namespace Soporte.Clases
             return ds;
 
         }
+    }
 
+    public static class Extensiones
+    {
+        public static DataGridView PrepararDGV(this DataGridView DataGrid)
+        {
+            DataGrid.AllowUserToAddRows = false;
+            DataGrid.AllowUserToDeleteRows = false;
+            DataGrid.AllowUserToOrderColumns = false;
+            DataGrid.AllowUserToResizeRows = false;
+            DataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGrid.RowHeadersVisible = false;
+            DataGrid.ReadOnly = true;
+            DataGrid.MultiSelect = false;
+            DataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            return DataGrid;
+        }
     }
 }

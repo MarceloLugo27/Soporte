@@ -126,14 +126,14 @@ namespace Soporte
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            GenerarCombos();
-            cbPeriodoSemestral.SelectedIndex = 1;
-            cbPeriodoAnual.SelectedIndex = 1;
-
             if (Conexion.IDUsuario == 1 || Conexion.IDUsuario == 2)
             {
                 sistemaToolStripMenuItem.Visible = true;
             }
+            GenerarCombos();
+            cbPeriodoSemestral.SelectedIndex = 1;
+            cbPeriodoAnual.SelectedIndex = 1;
+
 
         }
 
@@ -207,7 +207,8 @@ namespace Soporte
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Formularios.FormUsuarios formUsuarios = new Formularios.FormUsuarios();
+            formUsuarios.ShowDialog();
         }
 
         private void administrativosgeneralToolStripMenuItem_Click(object sender, EventArgs e)

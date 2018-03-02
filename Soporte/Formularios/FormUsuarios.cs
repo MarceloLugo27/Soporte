@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soporte.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,11 @@ namespace Soporte.Formularios
         }
 
         private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+            dgvUsuarios.PrepararDGV();
+        }
+
+        private void btnEjecutarAccion_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbAulas = new System.Windows.Forms.ComboBox();
             this.gbDatosEquipo = new System.Windows.Forms.GroupBox();
+            this.cbActivo = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbNumeroSerie = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.gbListaEquipos = new System.Windows.Forms.GroupBox();
             this.dgvEquipos = new System.Windows.Forms.DataGridView();
             this.cbModoEdición = new System.Windows.Forms.CheckBox();
-            this.cbActivo = new System.Windows.Forms.CheckBox();
             this.gbDatosEquipo.SuspendLayout();
             this.gbListaEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipos)).BeginInit();
@@ -95,6 +95,16 @@
             this.gbDatosEquipo.TabIndex = 2;
             this.gbDatosEquipo.TabStop = false;
             this.gbDatosEquipo.Text = "Datos del equipo";
+            // 
+            // cbActivo
+            // 
+            this.cbActivo.AutoSize = true;
+            this.cbActivo.Location = new System.Drawing.Point(9, 227);
+            this.cbActivo.Name = "cbActivo";
+            this.cbActivo.Size = new System.Drawing.Size(91, 17);
+            this.cbActivo.TabIndex = 14;
+            this.cbActivo.Text = "Equipo activo";
+            this.cbActivo.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -235,6 +245,7 @@
             this.dgvEquipos.Name = "dgvEquipos";
             this.dgvEquipos.Size = new System.Drawing.Size(722, 428);
             this.dgvEquipos.TabIndex = 0;
+            this.dgvEquipos.CurrentCellChanged += new System.EventHandler(this.dgvEquipos_CurrentCellChanged);
             // 
             // cbModoEdición
             // 
@@ -246,16 +257,6 @@
             this.cbModoEdición.Text = "Modo edición";
             this.cbModoEdición.UseVisualStyleBackColor = true;
             this.cbModoEdición.CheckedChanged += new System.EventHandler(this.cbModoEdición_CheckedChanged);
-            // 
-            // cbActivo
-            // 
-            this.cbActivo.AutoSize = true;
-            this.cbActivo.Location = new System.Drawing.Point(9, 227);
-            this.cbActivo.Name = "cbActivo";
-            this.cbActivo.Size = new System.Drawing.Size(91, 17);
-            this.cbActivo.TabIndex = 14;
-            this.cbActivo.Text = "Equipo activo";
-            this.cbActivo.UseVisualStyleBackColor = true;
             // 
             // frmAgregarEquipo
             // 

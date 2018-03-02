@@ -185,6 +185,7 @@
             this.editarEquiposToolStripMenuItem.Name = "editarEquiposToolStripMenuItem";
             this.editarEquiposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.editarEquiposToolStripMenuItem.Text = "Editar equipos";
+            this.editarEquiposToolStripMenuItem.Visible = false;
             // 
             // aulastoolStripMenuItem1
             // 

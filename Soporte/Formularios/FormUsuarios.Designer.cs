@@ -186,6 +186,7 @@
             this.btnEjecutarAccion.TabIndex = 0;
             this.btnEjecutarAccion.Text = "Editar";
             this.btnEjecutarAccion.UseVisualStyleBackColor = true;
+            this.btnEjecutarAccion.Click += new System.EventHandler(this.btnEjecutarAccion_Click);
             // 
             // btnNuevoUsuario
             // 

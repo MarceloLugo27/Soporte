@@ -12,7 +12,7 @@ namespace Soporte.Clases
     {
         #region Variables y Encapsulado
 
-
+        int intIDHardware;
         int intIDAula;
         String intTAG;
         String strUsuarioPC;
@@ -25,7 +25,9 @@ namespace Soporte.Clases
         String strCompany;
         String strFabricante;
         String strNumeroSerie;
+        Boolean bitActivo;
 
+        public int IntIDHardware { get => intIDHardware; set => intIDHardware = value; }
         public int IntIDAula { get => intIDAula; set => intIDAula = value; }
         public string IntTAG { get => intTAG; set => intTAG = value; }
         public string StrUsuarioPC { get => strUsuarioPC; set => strUsuarioPC = value; }
@@ -38,6 +40,7 @@ namespace Soporte.Clases
         public string StrCompany { get => strCompany; set => strCompany = value; }
         public string StrFabricante { get => strFabricante; set => strFabricante = value; }
         public string StrNumeroSerie { get => strNumeroSerie; set => strNumeroSerie = value; }
+        public bool BitActivo { get => bitActivo; set => bitActivo = value; }
         #endregion
 
         public static DataSet EquiposSelectDatos(int TipoAula)
@@ -103,6 +106,7 @@ namespace Soporte.Clases
         {
             DataSet ds = new DataSet();
             List<SqlParameter> listParameters = new List<SqlParameter>();
+            listParameters.Add(new SqlParameter { ParameterName = "@pIDHardware", SqlDbType = SqlDbType.Int, Value = Equipo.IntIDHardware });
             listParameters.Add(new SqlParameter { ParameterName = "@pIDAula", SqlDbType = SqlDbType.Int, Value = Equipo.IntIDAula });
             listParameters.Add(new SqlParameter { ParameterName = "@pStrTAG", SqlDbType = SqlDbType.VarChar, Value = Equipo.IntTAG });
             listParameters.Add(new SqlParameter { ParameterName = "@pStrUsuarioPC", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrUsuarioPC });
@@ -114,10 +118,25 @@ namespace Soporte.Clases
             listParameters.Add(new SqlParameter { ParameterName = "@pStrFabricante", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrFabricante });
             listParameters.Add(new SqlParameter { ParameterName = "@pStrNumeroSerie", SqlDbType = SqlDbType.VarChar, Value = Equipo.StrNumeroSerie });
 
+            try
+            {
+                ds = Conexion.execute_sp("PCUpdate", listParameters);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return ds;
+        }
+        public static DataSet EquipoSelectID(int IDHardware)
+        {
+            DataSet ds = new DataSet();
+            List<SqlParameter> listParameters = new List<SqlParameter>();
+            listParameters.Add(new SqlParameter { ParameterName = "@pIDHardware", SqlDbType = SqlDbType.Int, Value = IDHardware });
 
             try
             {
-                ds = Conexion.execute_sp("PCInsertar", listParameters);
+                ds = Conexion.execute_sp("PCSelectID", listParameters);
             }
             catch (Exception ex)
             {
